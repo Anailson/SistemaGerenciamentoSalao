@@ -1,24 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--Import materialize.css-->
-<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.css"  media="screen,projection"/>
-<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css"  media="screen,projection"/>
+<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.css" media="screen,projection" />
+<link type="text/css" rel="stylesheet"	href="bootstrap/css/bootstrap.min.css" media="screen,projection" />
 
-<title>CadastroCliente</title>
+<title>SISTEMA GERENCIADOR DE SALÃO</title>
 </head>
 <body>
 
 
-	<h2>Cad.Cliente</h2>
+<fieldset>
+	<legend class="text-primary">Cadastro Cliente</legend>
+	<form action="salvarcliente" method="post" id="formcliente">
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="nome">Nome:</label> <input name="nome" class="form-control" id="nome">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="telefone">Telefone:</label> <input name="telefone" class="form-control" id="telefone">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="cpf">CPF:</label> <input name="cpf" class="form-control" id="cpf">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="cep">CEP:</label> <input name="cep" class="form-control" id="cep">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="logradouro">Logradouro:</label> <input name="logradouro" class="form-control" id="logradouro">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="bairro">Bairro:</label> <input name="bairro" class="form-control" id="bairro">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="localidade">Localidade:</label> <input name="localidade" class="form-control" id="localidade">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="uf">UF:</label> <input name="uf" class="form-control" id="uf">
+			</div>
+		</div>
+
+		<button type="submit" class="btn btn-primary" value="cadastrar">CADASTRAR</button>
+		<button class="btn btn-primary" onclick="document.getElementById('formcliente').reset();">NOVO</button>
+	</form>
+
+</fieldset>	
+	
+<br/>
+	
+<a class="btn btn-outline-info" href="/listaclientes" role="button">Lista de Contatos dos Clientes</a>
+<br/>
+<br/>
+<br/>
+
+<!-- CARREGANDO DADOS CADASTRADOS CLIENTE -->
+<table class="table table-striped">
+	<thead >
+		<tr class="table-info"> <!-- LINHA -->
+		 	<th>ID</th> <!-- COLUNA -->
+		 	<th>Nome</th>
+		 	<th>Telefone</th>
+		 	<th>CPF</th>
+		 	<th>Logradouro</th>
+		 	<th>Bairro</th>
+		 	<th>Localidade</th>
+		 	<th>UF</th>
+		 </tr>
+	 </thead >
+ <tr th:each = "cliente :${clientes}">
+		<td class="table-info" th:text ="${cliente.id}"></td>
+		<td th:text ="${cliente.nome}"></td>
+		<td th:text ="${cliente.telefone}"></td>
+		<td th:text ="${cliente.cpf}"></td>
+		<td th:text ="${cliente.logradouro}"></td>
+		<td th:text ="${cliente.bairro}"></td>
+		<td th:text ="${cliente.localidade}"></td>
+		<td th:text ="${cliente.uf}"></td>
+</tr>
+
+</table>
 
 
 
 
 
- <!--JavaScript at end of body for optimized loading-->
- <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
- <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+	<!--JavaScript at end of body for optimized loading-->
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 </body>
 </html>
