@@ -3,9 +3,11 @@ package br.com.sistema.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
 
 import br.com.sistema.model.Cliente;
 import br.com.sistema.repository.ClienteRepository;
@@ -16,10 +18,17 @@ public class ClienteController {
 	@Autowired
 	private ClienteRepository clienteRepository;
 	
+	/*
+	 * An error happened during template parsing (template:
+	 *  "class path resource [templates/cadastro/cadastrocliente.html]")*/
+	
 	@RequestMapping(method = RequestMethod.GET, value = "/cadastrocliente")
-	public String inicio() {
+	public ModelAndView inicio() {
 		
-		return "cadastro/cadastrocliente";
+		//PASSANDO OBJETO PARA INICIA A TELA
+		ModelAndView modelAndView = new ModelAndView("cadastro/cadastrocliente");
+		modelAndView.addObject("clienteobj", new Cliente());
+		return modelAndView;
 	}
 	
 	//CADASTRAR CLIENTE
@@ -31,6 +40,7 @@ public class ClienteController {
 		ModelAndView andView = new ModelAndView("cadastro/cadastrocliente");
 		Iterable<Cliente> clienteIt = clienteRepository.findAll();
 		andView.addObject("clientes", clienteIt);
+		andView.addObject("clienteobj", new Cliente());
 		
 		return andView;
 	}
@@ -42,9 +52,25 @@ public class ClienteController {
 		ModelAndView andView = new ModelAndView("cadastro/cadastrocliente");
 		Iterable<Cliente> clienteIt = clienteRepository.findAll();
 		andView.addObject("clientes", clienteIt);
+		andView.addObject("clienteobj", new Cliente());
 		
 		return andView;
 	}
 	
+	/*------------------METODO DE EXCLUIR-------------------------*/
+	@GetMapping("/excluircliente/{idcliente}")
+	public ModelAndView excluir(@PathVariable("idcliente") Long idcliente){
+		
+		
+		clienteRepository.deleteById(idcliente); 
+		
+		
+		ModelAndView modelAndView = new ModelAndView("cadastro/cadastrocliente");
+		modelAndView.addObject("clientes", clienteRepository.findAll());
+		modelAndView.addObject("clienteobj", new Cliente()); 
+	   
+		return modelAndView;
+		
+	}
 
 }
