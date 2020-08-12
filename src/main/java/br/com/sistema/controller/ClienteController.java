@@ -18,9 +18,6 @@ public class ClienteController {
 	@Autowired
 	private ClienteRepository clienteRepository;
 	
-	/*
-	 * An error happened during template parsing (template:
-	 *  "class path resource [templates/cadastro/cadastrocliente.html]")*/
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/cadastrocliente")
 	public ModelAndView inicio() {
