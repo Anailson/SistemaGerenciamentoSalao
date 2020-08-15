@@ -13,34 +13,27 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 public class Cliente implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	private String nome;
-	
-	private String sobrenome;
-	
+
 	private String telefone;
-	
+
 	private String cpf;
-	
+
 	private String email;
-	
+
 	private String cep;
-	
+
 	private String logradouro;
-	
-	private String complemento;
-	
+
 	private String bairro;
-	
-	private String localidade;
-	
+
 	private String uf;
-	
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -57,14 +50,6 @@ public class Cliente implements Serializable {
 		this.nome = nome;
 	}
 
-	public String getSobrenome() {
-		return sobrenome;
-	}
-	
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
-	}
-	
 	public String getTelefone() {
 		return telefone;
 	}
@@ -96,15 +81,6 @@ public class Cliente implements Serializable {
 	public void setLogradouro(String logradouro) {
 		this.logradouro = logradouro;
 	}
-	
-	
-	public String getComplemento() {
-		return complemento;
-	}
-	
-	public void setComplemento(String complemento) {
-		this.complemento = complemento;
-	}
 
 	public String getBairro() {
 		return bairro;
@@ -114,14 +90,6 @@ public class Cliente implements Serializable {
 		this.bairro = bairro;
 	}
 
-	public String getLocalidade() {
-		return localidade;
-	}
-
-	public void setLocalidade(String localidade) {
-		this.localidade = localidade;
-	}
-
 	public String getUf() {
 		return uf;
 	}
@@ -129,12 +97,11 @@ public class Cliente implements Serializable {
 	public void setUf(String uf) {
 		this.uf = uf;
 	}
-	
-	
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}
@@ -163,9 +130,5 @@ public class Cliente implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
-
-	
 
 }
