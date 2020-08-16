@@ -14,6 +14,7 @@ import br.com.sistema.model.Cliente;
 @Transactional
 public interface ClienteRepository extends CrudRepository<Cliente, Long>{
 
-	
+	@Query("select p from Cliente p where p.nome like %?1%")
+	List<Cliente> findClienteByName(String nome);
 	
 }

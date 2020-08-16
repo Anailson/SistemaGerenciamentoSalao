@@ -17,9 +17,10 @@
 <!-- https://bootsnipp.com/snippets/0BDPG -->
 </head>
 <body>
-	<fieldset>
+	
+		<a href="/cadastroservico">Cadastro Serviços</a>
 		<div class="alert alert-primary" role="alert">
-			<legend>Cadastro de funcionários</legend>
+			<legend>Cadastro de Clientes</legend>
 		</div>
 		<form action="salvarcliente" method="post" id="formcliente"  th:object="${clienteobj}">
 
@@ -75,17 +76,23 @@
 
 			<button type="submit" class="btn btn-success" value="cadastrar">CADASTRAR</button>
 			<button class="btn btn-danger" 	onclick="document.getElementById('formcliente').reset();">NOVO</button>
+			<a class="btn btn-info" href="/listaclientes" role="button">EXIBIR CLIENTES</a>
 
 
 		</form>
-	</fieldset>
 
-
+		
+	<br />
 	<br />
 
-	<a class="btn btn-info" href="/listaclientes" role="button">Lista dos Clientes</a>
+	<form action="pesquisacliente" method="post">
+		<label>Pesquisa Cliente:</label> 
+		<input name="nomepesquisa" placeholder="Informe nome do cliente"> 
+		<button type="submit" class="btn btn-primary mb-2" value="Buscar">Buscar</button>
+		
+	</form>
 
-	<br />
+
 	<br />
 	<br />
 	

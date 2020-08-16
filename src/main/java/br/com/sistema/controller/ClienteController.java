@@ -91,6 +91,19 @@ public class ClienteController {
 		return modelAndView;
 		
 	}
+	/*--CONSULTA NOMECLIENTE---*/
+	@PostMapping("**/pesquisacliente")
+	public ModelAndView consultanome(@RequestParam("nomepesquisa")String nomepesquisa) {
+		
+		ModelAndView modelAndView = new ModelAndView("cadastro/cadastrocliente");
+		modelAndView.addObject("clientes", clienteRepository.findClienteByName(nomepesquisa));
+		modelAndView.addObject("clienteobj" ,new Cliente());
+		
+		return modelAndView;
+		
+		
+		
+	}
 	
 	
 	

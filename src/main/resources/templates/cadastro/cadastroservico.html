@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" 	href="/bootstrap/css/bootstrap.css" media="screen,projection" />
+<link type="text/css" rel="stylesheet" 	href="/bootstrap/css/bootstrap.min.css" media="screen,projection" />
+
+<!-- Adicionando JQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	crossorigin="anonymous"></script>
+
+<title>SISTEMA GERENCIADOR DE SALÃO</title>
+<!-- https://bootsnipp.com/snippets/0BDPG -->
+</head>
+<body>
+	
+		
+	<a href="/cadastrocliente">Cadastro Cliente</a>
+		<div class="alert alert-primary" role="alert">
+			<legend>Cadastro de Serviços</legend>
+		</div>
+		
+	<form action="salvarservico" method="post">
+	
+		<label>Valor Serviço</label>
+		<input name="valorservico">
+		
+	    <label>Tipo Serviço</label>
+	    <input name="tiposervico">
+
+		<input type="submit" value="salvar">
+	</form>
+
+	<a class="btn btn-info" href="/listaservicos" role="button">EXIBIR SERVIÇOS</a>
+	
+	
+
+
+	<!--JavaScript at end of body for optimized loading-->
+	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+
+</body>
+</html>
