@@ -9,6 +9,8 @@ import javax.persistence.Id;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import com.sun.istack.internal.NotNull;
+
 @Entity
 public class Cliente implements Serializable {
 
@@ -18,6 +20,7 @@ public class Cliente implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	
 	private String nome;
 
 	private String telefone;

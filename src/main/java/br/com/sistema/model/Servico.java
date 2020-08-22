@@ -19,10 +19,11 @@ public class Servico implements Serializable{
 	private int valorservico; /*VALOR DO SERVIÇO */
 	
 	private String tiposervico; /*TIPO DE SERVIÇO NO SALÃO CORTE CABELO, PINTURA, DEPILAÇÃO ETC*/
+	
+	private String duracao;  /*DEFININDO O TEMPO DO SERVIÇO EM DURACAO EX: CORTE DO CABELO - DURACAO 00:30*/
 
-	
-	
-	
+
+
 	
 	public Long getId() {
 		return id;
@@ -48,6 +49,14 @@ public class Servico implements Serializable{
 		this.tiposervico = tiposervico;
 	}
 
+	
+	public void setDuracao(String duracao) {
+		this.duracao = duracao;
+	}
+	
+	public String getDuracao() {
+		return duracao;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
