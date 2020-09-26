@@ -24,27 +24,29 @@
 			<legend>Cadastro de Serviços</legend>
 		</div>
 		
-	<form action="salvarservico" method="post" id="formservico" >
+	<form action="salvarservico" method="post"  id="formservico" th:object="${servicoobj}"> 
 		
 	  	<div class="form-row">
 	  		<div class="col">
 					<label for="id">ID</label>
-					<input type="text" class="form-control" id="id" readonly="readonly">
+					<input type="text" class="form-control" id="id" th:field="*{id}" readonly="readonly">
 			</div>
 			<div class="col">
 					<label for="nome">Tipo Serviço:</label>
-					<input type="text"	class="form-control" id="tiposervico" >
+					<input type="text"	class="form-control" id="tiposervico" th:field="*{tiposervico}"  >
 		  </div>
+		  
+				  
 	 	</div>	
 	 	
 	 	<div class="form-row">
 	  		<div class="col">
 					<label for="id">ValorR$</label>
-					<input type="text" class="form-control" id="valorservico" >
+					<input type="text" class="form-control" id="valorservico" th:field="*{valorservico}" >
 			</div>
 			<div class="col">
 					<label for="nome">Duração</label>
-					<input type="text"	class="form-control" id="duracao">
+					<input type="text"	class="form-control" id="duracao" th:field="*{duracao}" >
 		  </div>
 	 	</div>
 	 	
@@ -70,10 +72,11 @@
 	
 	
 		<tr th:each = "servico :${servicos}">
-			<td class="table-info" th:text = "${servico.id}"></td>
+			<td th:text = "${servico.id}"></td>
 			<td th:text = "${servico.tiposervico}"></td>
 			<td th:text = "${servico.valorservico}"></td>
 			<td th:text = "${servico.duracao}"></td>
+			<td><a th:href="@{/editarservico/{idservico}(idservico=${servico.id})}">Editar</a></td>
 		</tr>
 	
 	</table>

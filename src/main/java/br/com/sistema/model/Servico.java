@@ -1,6 +1,7 @@
 package br.com.sistema.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +17,7 @@ public class Servico implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	private int valorservico; /*VALOR DO SERVIÇO */
+	private double valorservico; /*VALOR DO SERVIÇO */
 	
 	private String tiposervico; /*TIPO DE SERVIÇO NO SALÃO CORTE CABELO, PINTURA, DEPILAÇÃO ETC*/
 	
@@ -33,11 +34,15 @@ public class Servico implements Serializable{
 		this.id = id;
 	}
 
-	public int getValorservico() {
+	
+
+	
+
+	public double getValorservico() {
 		return valorservico;
 	}
 
-	public void setValorservico(int valorservico) {
+	public void setValorservico(double valorservico) {
 		this.valorservico = valorservico;
 	}
 

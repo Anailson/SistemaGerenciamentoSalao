@@ -45,7 +45,7 @@
 			<div class="form-row">
 				<div class="col">
 					<label for="telefone">Telefone:</label> 
-					<input type="text" class="form-control" id="telefone" th:field="*{telefone}">
+					<input type="text"  class="form-control" id="telefone" th:field="*{telefone}">
 				</div>
 				<div class="col">
 					<label for="email">Email:</label> 
@@ -108,9 +108,10 @@
 				<th>Nome</th>
 				<th>Telefone</th>
 				<th>CPF</th>
-				<th>Endereço</th>
+				<th>Bairro</th>
 				<th>Editar</th>
 				<th>Excluir</th>
+				
 			</tr>
 		</thead>
 		<tr th:each="cliente :${clientes}">
@@ -118,9 +119,10 @@
 			<td th:text="${cliente.nome}"></td>
 			<td th:text="${cliente.telefone}"></td>
 			<td th:text="${cliente.cpf}"></td>
-			<td th:text="${cliente.logradouro}"></td>
+			<td th:text="${cliente.bairro}"></td>
 			<td><a th:href="@{/editarcliente/{idcliente}(idcliente=${cliente.id})}">Editar</a></td>
 			<td><a th:href="@{/excluircliente/{idcliente}(idcliente=${cliente.id})}">Excluir</a></td>
+			
 		</tr>
 
 	</table>

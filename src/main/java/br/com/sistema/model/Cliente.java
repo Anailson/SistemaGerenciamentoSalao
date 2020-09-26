@@ -6,10 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
-import com.sun.istack.internal.NotNull;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.br.CPF;
 
 @Entity
 public class Cliente implements Serializable {
@@ -20,13 +21,16 @@ public class Cliente implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	
+
 	private String nome;
 
 	private String telefone;
 
+	//@CPF(message = "CPF invalido")
+	//@NotNull(message = "CPF invalido")
 	private String cpf;
-
+	
+	//@Email(message = "Email invalido")
 	private String email;
 
 	private String cep;
