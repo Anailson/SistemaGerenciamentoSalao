@@ -31,13 +31,18 @@
 					<label for="id">ID</label>
 					<input type="text" class="form-control" id="id" th:field="*{id}" readonly="readonly">
 			</div>
-			<div class="col">
-					<label for="nome">Tipo Serviço:</label>
-					<input type="text"	class="form-control" id="tiposervico" th:field="*{tiposervico}"  >
-		  </div>
-		  
-				  
-	 	</div>	
+		    <div class="col">
+		    <labeL for="tiposervico">Tipos de Serviço:</labeL>
+			<select class="custom-select" th:field="*{tiposervico}">
+				  <option value="" disabled selected >--[Escolha o Serviço]--</option>
+				  <option value="cortefeminino">Corte feminino</option>
+				  <option value="coloracao">Coloração</option>
+				  <option value="manicure">Manicure</option>
+				  <option value="sobrencelha">Sobrancelha</option>
+				  <option value="depilacao">Depilação</option> 
+			</select>
+			</div>
+		  </div>	
 	 	
 	 	<div class="form-row">
 	  		<div class="col">

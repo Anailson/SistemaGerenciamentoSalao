@@ -15,6 +15,11 @@ import br.com.sistema.model.Servico;
 import br.com.sistema.repository.ClienteRepository;
 import br.com.sistema.repository.ServicoRepository;
 
+/*
+ * Desenvolvedor : Anaílson
+ * 
+ * */
+
 @Controller
 public class ServicoController  {
 	
@@ -26,6 +31,7 @@ public class ServicoController  {
 	public ModelAndView inicio() {
 
 		ModelAndView modelAndView = new ModelAndView("cadastro/cadastroservico");
+		Iterable<Servico> servicoIt = servicoRepository.findAll();
 		modelAndView.addObject("servicoobj", new Servico()); //CRIANDO NOVO OBJ PRA PEGAR OS DADOS EDICAÇÃO
 		
 		return modelAndView;
@@ -88,3 +94,5 @@ public class ServicoController  {
 	
 
 }
+
+
