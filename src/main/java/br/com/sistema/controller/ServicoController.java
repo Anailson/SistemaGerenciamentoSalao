@@ -70,6 +70,21 @@ public class ServicoController  {
 		
 
 	}
+	/*--REMOVER--*/
+	@GetMapping("/excluirservico/{idservico}")
+	public ModelAndView excluir(@PathVariable("idservico") Long idservico) {
+		
+		
+		servicoRepository.deleteById(idservico);
+		
+		ModelAndView modelAndView = new ModelAndView("cadastro/cadastroservico");
+		modelAndView.addObject("servicos", servicoRepository.findAll());//CARREGANDO OS OBJETOS
+		modelAndView.addObject("servicoobj", new Servico()); 
+		
+		return modelAndView;
+		
+
+	}
 	
 
 }

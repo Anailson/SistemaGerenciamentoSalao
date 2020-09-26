@@ -49,6 +49,7 @@
 					<input type="text"	class="form-control" id="duracao" th:field="*{duracao}" >
 		  </div>
 	 	</div>
+	 	<br/>
 	 	
 	 	<button type="submit" class="btn btn-success" value="salvar">SALVAR</button>
 	 	
@@ -57,6 +58,8 @@
 	<br/>
 	
 	<a class="btn btn-info" href="/listaservicos" role="button">EXIBIR SERVIÇOS</a>
+	<br/>
+	<br/>
 		
 	<table class="table table-striped">
 			<thead>
@@ -77,6 +80,7 @@
 			<td th:text = "${servico.valorservico}"></td>
 			<td th:text = "${servico.duracao}"></td>
 			<td><a th:href="@{/editarservico/{idservico}(idservico=${servico.id})}">Editar</a></td>
+			<td><a th:href="@{/excluirservico/{idservico}(idservico=${servico.id})}">Excluir</a></td>
 		</tr>
 	
 	</table>
