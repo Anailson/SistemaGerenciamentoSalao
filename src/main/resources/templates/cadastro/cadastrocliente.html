@@ -18,10 +18,17 @@
 </head>
 <body>
 	
-		<a href="/cadastroservico">Cadastro Serviços</a>
+	 <nav class="navbar navbar-expand-lg navbar-light bg-light text-right">
+	 <a class="navbar-brand" href="/cadastroservico" >ACESSO CADASTRO SERVIÇO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+	  </nav>
+	 <br/>	
 		<div class="alert alert-primary" role="alert">
-			<legend>Cadastro de Clientes</legend>
+			<legend>CADASTRO DE CLIENTES</legend>
 		</div>
+		
 		<form action="salvarcliente" method="post" id="formcliente"  th:object="${clienteobj}">
 
 
