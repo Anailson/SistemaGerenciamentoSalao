@@ -2,6 +2,7 @@ package br.com.sistema.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Timer;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,8 +22,7 @@ public class Servico implements Serializable{
 	
 	private String tiposervico; /*TIPO DE SERVIÇO NO SALÃO CORTE CABELO, PINTURA, DEPILAÇÃO ETC*/
 	
-	private String duracao;  /*DEFININDO O TEMPO DO SERVIÇO EM DURACAO EX: CORTE DO CABELO - DURACAO 00:30*/
-
+    private String duracao;  /*DEFININDO O TEMPO DO SERVIÇO EM DURACAO EX: CORTE DO CABELO - DURACAO 00:30*/
 
 
 	

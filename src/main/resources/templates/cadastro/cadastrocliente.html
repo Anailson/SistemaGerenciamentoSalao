@@ -120,12 +120,13 @@
 			<td th:text="${cliente.telefone}"></td>
 			<td th:text="${cliente.cpf}"></td>
 			<td th:text="${cliente.bairro}"></td>
-			<td><a th:href="@{/editarcliente/{idcliente}(idcliente=${cliente.id})}">Editar</a></td>
-			<td><a th:href="@{/excluircliente/{idcliente}(idcliente=${cliente.id})}">Excluir</a></td>
+			<td><a class="btn btn-primary" role="button" th:href="@{/editarcliente/{idcliente}(idcliente=${cliente.id})}">Editar</a></td>
+			<td><a class="btn btn-danger" role="button" th:href="@{/excluircliente/{idcliente}(idcliente=${cliente.id})}">Excluir</a></td>
 			
 		</tr>
 
 	</table>
+	
 
 
 	<!-- Adicionando Javascript -->

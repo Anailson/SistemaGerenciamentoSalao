@@ -80,12 +80,12 @@
 	
 	
 		<tr th:each = "servico :${servicos}">
-			<td th:text = "${servico.id}"></td>
+			<td class="table-info" th:text = "${servico.id}"></td>
 			<td th:text = "${servico.tiposervico}"></td>
 			<td th:text = "${servico.valorservico}"></td>
 			<td th:text = "${servico.duracao}"></td>
-			<td><a th:href="@{/editarservico/{idservico}(idservico=${servico.id})}">Editar</a></td>
-			<td><a th:href="@{/excluirservico/{idservico}(idservico=${servico.id})}">Excluir</a></td>
+			<td><a class="btn btn-primary" role="button" th:href="@{/editarservico/{idservico}(idservico=${servico.id})}">Editar</a></td>
+			<td><a class="btn btn-danger" role="button" th:href="@{/excluirservico/{idservico}(idservico=${servico.id})}">Excluir</a></td>
 		</tr>
 	
 	</table>
